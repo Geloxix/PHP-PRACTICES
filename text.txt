@@ -1,0 +1,52 @@
+if (isset($_POST['submit'])) {
+    $sex = null;
+
+    if (isset($_POST["sex"])) {
+        $sex = $_POST["sex"];
+    }
+
+    if ($sex == "male") {
+        echo "You selected a male";
+    } elseif ($sex == "female") {
+        echo "You selected a male";
+    } elseif ($sex == "bisexual") {
+        echo "You selected a Bisexual";
+    } else {
+        echo "Please make a selection";
+    }
+}
+
+
+
+//     if (isset($_POST['name'])) {
+//         echo $_POST['name'];
+//     } else {
+//         echo 'Please enter a name';
+//     }
+
+// $_POST['name'] = "";
+
+// echo $_GET["username"] . "<br/>";
+
+// $name = "Marc angelo";
+// var_dump($name) . "<br/>";
+// $xplode = explode(" ", $name);
+// var_dump($xplode[1]) . "<br/>";
+
+// $fruits = ["Apple", "Banana", "Mango", "Pineapple"];
+
+// array_push($fruits, "Orange", "Coconut");
+
+// foreach($fruits as $fruit) {
+//     echo $fruit . "<br/>";
+// }
+
+// $cars = ["car1" => "Volvo", "car2" => "Ford", "car3" => "Lamborghini"];
+
+// $cars = $cars[$_POST["car"]];
+
+// echo $cars;
+
+// foreach($cars as $key => $value) {
+//     echo"$key: $value" . "<br/>";
+// }
