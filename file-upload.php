@@ -1,6 +1,7 @@
 <?php
     //Valid file type to upload
     $valid_type = array('png', 'jpg', 'gif', 'jpeg');
+    $uploadOk = 1;
 
     if (isset($_POST['submit'])) {
         if (!empty($_FILES['upload']['name'])) {
@@ -9,6 +10,8 @@
             $file_tmp = $_FILES['upload']['tmp_name'];
 
             $target_dir = 'uploads/' . $file_name;
+            $uploadOk = 1;
+            print_r($_FILES);
         } else {
             $message = '<h1 style="color: red;">Please Upload A File!</h1>';
         }
@@ -29,13 +32,15 @@
                 }
                 
                 //check if the file exists
-                if (file_exists($target_dir)) {
-                    $message = '<h1>Sorry file Already Exists.</h1>';
-                }
+                // if (file_exists($target_dir)) {
+                //     $message = '<h1>Sorry file Already Exists.</h1>';
+                //     $uploadOk = 0;
+                // }
             }
         } else {
             //produces an error if the file isn't Valid type
             $message = '<h1 style="color: red;">Invalid File Type!</h1>';
+            $uploadOk = 0;
         }
 
         
@@ -57,5 +62,7 @@
         <input type="file" name="upload"><br>
         <input type="submit" value="Submit" name="submit">
     </form>
+
+    <div id="uploadImage"></div>
 </body>
 </html>
